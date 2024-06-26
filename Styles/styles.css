@@ -1,0 +1,52 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.Container {
+    display: flex;
+}
+
+/* Navbar styles */
+.Navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 150px;
+    height: 100vh;
+    background-color: rgb(39, 39, 39);
+}
+
+.Logo {
+    font-size: 25px;
+    width: 100%;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling the links */
+.Menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.Menu a:hover {
+    color: lightgray;
+}
