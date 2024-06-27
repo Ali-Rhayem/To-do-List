@@ -3,154 +3,152 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-}
-
-html, body {
+  }
+  
+  html, body {
     height: 100%;
-}
-
-.Container {
+  }
+  
+  .Container {
     display: flex;
-    height: 100vh; 
-}
-
-.Navbar {
+    height: 100vh;
+  }
+  
+  .Navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
     width: 100px;
-    height: 100vh; 
+    height: 100vh;
     background-color: rgb(39, 39, 39);
-}
-
-.Logo {
+    flex-shrink: 0; /* Ensure Navbar does not shrink */
+  }
+  
+  .Logo {
     font-size: 25px;
     width: 100%;
     height: 50px;
-    color: rgb(255, 255, 255);
+    color: orange;
     padding: 10px;
     text-align: center;
-}
-
-.Menu {
+  }
+  
+  .Menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     width: 100%;
-    flex-grow: 1; 
-}
-
-.Menu img {
+    flex-grow: 1;
+  }
+  
+  .Menu img {
     width: 40px;
     height: 40px;
     cursor: pointer;
     transition: transform 0.2s;
-}
-
-.Menu img:hover {
+  }
+  
+  .Menu img:hover {
     transform: scale(1.1);
-}
-
-.Right-side {
+  }
+  
+  .Right-side {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     height: 100vh;
-}
-
-.Header {
+  }
+  
+  .Header {
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     background-color: white;
-}
-
-.Welcome-message {
+  }
+  
+  .Welcome-message {
     display: flex;
     justify-content: flex-start;
     color: black;
-}
-
-.Welcome-message p {
+  }
+  
+  .Welcome-message p {
     font-size: 20px;
     font-weight: 500;
     color: black;
     margin-right: 20px;
-}
-
-.end {
+  }
+  
+  .end {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
-}
-
-.Right-side-img {
+  }
+  
+  .Right-side-img {
     filter: invert(100%);
     width: 24px;
     height: 24px;
-}
-
-form {
+  }
+  
+  form {
     display: flex;
     justify-content: space-between;
     margin: 10px 8px 20px 20px;
-}
-
-form input, form button {
+  }
+  
+  form input, form button {
     padding: 10px;
     margin-right: 10px;
-}
-
-form button {
+    border: 2px black solid;
+    border-radius: 10px;
+  }
+  
+  form button {
     background-color: rgb(39, 39, 39);
     border-radius: 10px;
-    color: white;
+    color: orange;
     border: none;
     cursor: pointer;
-}
-
-hr {
+  }
+  
+  hr {
     width: 95%;
     border: 4px solid rgb(39, 39, 39);
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10px;
-}
-
-.Tasks {
+  }
+  
+  .Tasks {
     display: flex;
     flex-direction: row;
     gap: 20px;
     margin: 20px;
-    flex-grow: 1; 
-}
-
-.Column {
+    flex-grow: 1;
+    overflow: auto; /* Ensure tasks container can scroll if content overflows */
+  }
+  
+  .Column {
     flex: 1;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 100%; 
-}
-
-.pending {}
-
-.completed {}
-
-.late {}
-
-.Column h2 {
+    height: 100%;
+  }
+  
+  .Column h2 {
     text-align: center;
     margin-bottom: 10px;
-}
-
-.task {
+  }
+  
+  .task {
     padding: 20px;
     margin-bottom: 10px;
     background-color: #2c2c2c;
@@ -161,31 +159,106 @@ hr {
     justify-content: space-between;
     cursor: grab;
     color: #fff;
-}
-
-.task-info p {
+  }
+  
+  .task-info p {
     margin-bottom: 5px;
-}
-
-.task-actions {
+  }
+  
+  .task-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-}
-
-.task-action {
+  }
+  
+  .task-action {
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-}
-
-.task-action.complete {
+  }
+  
+  .task-action.complete {
+    background-color: green;
+    color: black;
+  }
+  .task-action.complete:hover {
     background-color: #28a745;
-    color: white;
-}
-
-.task-action.delete {
+  }
+  .task-action.delete {
+    background-color: #ff0000;
+    color: black;
+  }
+  .task-action.delete:hover {
     background-color: #dc3545;
-    color: white;
-}
+    
+  }
+
+@media screen and (max-width: 768px) {
+    .Container {
+      flex-direction: column; 
+    }
+  
+    .Navbar {
+      flex-direction: row; 
+      width: 100%; 
+      height: auto; 
+    }
+  
+    .Menu {
+      flex-direction: row; 
+      gap: 10px; 
+    }
+  
+    .Right-side {
+      flex-direction: column; 
+      overflow-y: auto; 
+    }
+  
+    .Header {
+      flex-direction: column; 
+      height: auto; 
+      padding: 10px; 
+    }
+  
+    form {
+      flex-direction: column; 
+      margin: 10px 10px;
+      gap: 10px
+    }
+    hr{
+        display: none;
+    }
+  
+    .Tasks {
+      flex-direction: column; 
+      gap: 10px;
+      margin: 10px 0; 
+    }
+  
+    .Column {
+      height: auto; 
+    }
+  }
+  
+
+  @media screen and (max-width: 480px) {
+    .Logo {
+      font-size: 20px; 
+    }
+  
+    .Menu img {
+      width: 30px; 
+      height: 30px;
+    }
+  
+    .Right-side-img {
+      width: 20px; 
+      height: 20px;
+    }
+  
+    .task {
+      padding: 15px; 
+    }
+  }
+  
