@@ -14,7 +14,6 @@ html, body {
     height: 100vh; 
 }
 
-
 .Navbar {
     display: flex;
     flex-direction: column;
@@ -140,19 +139,53 @@ hr {
     height: 100%; 
 }
 
-.pending {
+.pending {}
 
-}
+.completed {}
 
-.completed {
-
-}
-
-.late {
-
-}
+.late {}
 
 .Column h2 {
     text-align: center;
     margin-bottom: 10px;
+}
+
+.task {
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #2c2c2c;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: grab;
+    color: #fff;
+}
+
+.task-info p {
+    margin-bottom: 5px;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.task-action {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.task-action.complete {
+    background-color: #28a745;
+    color: white;
+}
+
+.task-action.delete {
+    background-color: #dc3545;
+    color: white;
 }
